@@ -1,0 +1,25 @@
+food(banana, low_sugar).
+food(carrot, low_sugar).
+food(orange, low_sugar).
+food(spinach, low_sodium).
+food(cucumber, low_sodium).
+food(salmon, high_omega3).
+food(turkey, lean_protein).
+food(brown_rice, whole_grain).
+food(quinoa, whole_grain).
+food(oatmeal, whole_grain).
+food(nuts, heart_healthy_fats).
+food(avocado, heart_healthy_fats).
+
+% Suggest suitable foods for diseases
+suggested_food(Disease, Food) :-
+    food(Food, Properties),
+    suitable_for(Disease, Properties).
+
+% Define suitable food properties for diseases
+suitable_for(diabetes, low_sugar).
+suitable_for(hypertension, low_sodium).
+suitable_for(diabetes, whole_grain).
+suitable_for(hypertension, high_omega3).
+suitable_for(diabetes, lean_protein).
+suitable_for(hypertension, heart_healthy_fats).
