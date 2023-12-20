@@ -1,0 +1,32 @@
+is_child(X) :- boy(X).
+is_child(X) :- girl(X).
+
+% b. Every child gets a doll or a train or a lump of coal
+gets_toy(X, doll) :- is_child(X).
+gets_toy(X, train) :- is_child(X).
+gets_toy(X, lump_of_coal) :- is_child(X).
+
+% c. No boy gets any doll
+gets_toy(X, doll) :- is_child(X), girl(X).
+
+% d. No child who is good gets any lump of coal
+gets_toy(X, lump_of_coal) :- is_child(X), not(good(X)).
+
+% e. Jack is a boy
+boy(jack).
+
+
+input:
+a)is_child(X) :- boy(X).
+is_child(X) :- girl(X).
+
+b)gets_toy(X, doll) :- is_child(X).
+gets_toy(X, train) :- is_child(X).
+gets_toy(X, lump_of_coal) :- is_child(X).
+
+c)gets_toy(X, doll) :- is_child(X), girl(X).
+
+
+d)gets_toy(X, lump_of_coal) :- is_child(X), not(good(X)).
+
+e)boy(jack).
